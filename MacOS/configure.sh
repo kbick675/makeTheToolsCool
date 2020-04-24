@@ -84,6 +84,7 @@ brewInstall
 brewUpdate
 zshInstall
 zshZInstall
+configureGitCompletion
 pl9kInstall
 
 #Install Fonts

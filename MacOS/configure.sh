@@ -21,6 +21,16 @@ brewUpdate () {
     success 'brew updated'
 }
 
+brewBundleInstall () {
+    echo "Do you wish to use the included Brewfile?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) brew bundle; break;;
+            No ) break;;
+        esac
+    done
+}
+
 zshInstall () {
     if test $(which zsh); then
         info "zsh already installed..."
@@ -40,12 +50,16 @@ zshZInstall () {
 }
 
 configureGitCompletion () {
-    GIT_VERSION="$(git --version | awk '{ print $3 }')"
-    URL="https://raw.github.com/git/git/v$GIT_VERSION/contrib/completion/git-completion.bash"
-    success "git-completion for $GIT_VERSION downloaded"
-    if ! curl "$URL" --silent --output "$HOME/.git-completion.bash"; then
-        echo "ERROR: Couldn't download completion script. Make sure you have a working internet connection." && exit 1
-        fail 'git completion download failed'
+    URL="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash"
+    if ! test -f ~/.git-completion.bash; then\
+        if ! curl "$URL" --silent --output ~/.git-completion.bash; then
+            echo "ERROR: Couldn't download completion script. Make sure you have a working internet connection." && exit 1
+            fail 'git-completion download failed'
+        else
+            success "git-completion downloaded"
+        fi
+    else
+        info "git-completion already installed..."
     fi
 }
 
@@ -79,9 +93,11 @@ fontsInstall () {
     done
 }
 
+info "--Setup started--"
 #Install Packages
 brewInstall
 brewUpdate
+brewBundleInstall
 zshInstall
 zshZInstall
 configureGitCompletion
@@ -89,3 +105,5 @@ pl9kInstall
 
 #Install Fonts
 fontsInstall
+
+info "--Setup complete--"

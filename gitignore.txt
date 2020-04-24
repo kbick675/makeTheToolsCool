@@ -1,0 +1,4 @@
+.vscode
+
+# Ignore JSON lock files
+*.lock.json

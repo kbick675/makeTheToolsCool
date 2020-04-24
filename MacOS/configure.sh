@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eou pipefail
 
-source ./scripts/prompt
+source ../scripts/prompt
 
 brewInstall () {
     if test ! $(which brew); then
@@ -64,12 +64,27 @@ pl9kInstall () {
         brew install powerlevel9k
         pl9kInstall
     fi
-}       
+}
+
+fontsInstall () {
+    FILES=../Fonts/*.ttf
+    info "Installing fonts..."
+    for filename in ../Fonts/*.ttf; do
+        if test -f ~/Library/Fonts/"$filename"; then
+            info "$filename is already in the Fonts directory..."
+        else
+            cp "$filename" ~/Library/Fonts
+            success "$filename successfully copied to the Fonts directory..."
+        fi
+    done
+}
 
 #Install Packages
 brewInstall
 brewUpdate
 zshInstall
 zshZInstall
-configureGitCompletion
 pl9kInstall
+
+#Install Fonts
+fontsInstall

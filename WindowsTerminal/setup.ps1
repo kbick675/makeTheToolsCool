@@ -13,7 +13,7 @@ switch (Test-Path -Path "$env:ProgramData\Chocolatey") {
 }
 
 ## Install Packages
-$packages = "Microsoft-Windows-Terminal", "pwsh", "terraform", "nmap", "screentogif"
+$packages = "Microsoft-Windows-Terminal", "pwsh"
 foreach ($package in $packages) {
     choco install $package -y
 }

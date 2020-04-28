@@ -13,7 +13,7 @@ switch (Test-Path -Path "$env:ProgramData\Chocolatey") {
 }
 
 ## Install Packages
-$packages = "Microsoft-Windows-Terminal", "pwsh"
+$packages = "pwsh", "Microsoft-Windows-Terminal"
 foreach ($package in $packages) {
     choco install $package -y
 }

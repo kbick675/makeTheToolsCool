@@ -1,0 +1,29 @@
+#!/bin/bash
+#set -eou pipefail
+
+code --install-extension akamud.vscode-theme-onelight
+code --install-extension almenon.arepl
+code --install-extension amazonwebservices.aws-toolkit-vscode
+code --install-extension DotJoshJohnson.xml
+code --install-extension eamodio.gitlens
+code --install-extension Equinusocio.vsc-community-material-theme
+code --install-extension Equinusocio.vsc-material-theme
+code --install-extension equinusocio.vsc-material-theme-icons
+code --install-extension mauve.terraform
+code --install-extension mechatroner.rainbow-csv
+code --install-extension monokai.theme-monokai-pro-vscode
+code --install-extension ms-azuretools.vscode-azureterraform
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-kubernetes-tools.vscode-aks-tools
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-python.python
+code --install-extension ms-vscode.azure-account
+code --install-extension ms-vscode.azurecli
+code --install-extension ms-vscode.Go
+code --install-extension ms-vscode.powershell
+code --install-extension ms-vsts.team
+code --install-extension njpwerner.autodocstring
+code --install-extension PKief.material-icon-theme
+code --install-extension redhat.vscode-yaml
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension vscoss.vscode-ansible

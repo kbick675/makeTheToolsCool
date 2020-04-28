@@ -63,15 +63,30 @@ switch (Test-Path -Path "$($env:LocalAppData)\Packages\Microsoft.WindowsTerminal
     $true {
         $settingsJsonPath = "$($env:LocalAppData)\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
         $settingsJson = Get-Content $settingsJsonPath -Raw | ConvertFrom-Json
+        switch ($null -ne $settingsJson.schemes) {
+            $true {
+                $schemeName = 'Monokai Vivid'
+                switch ($null -eq $settingsJson.schemes.($schemeName)) {
+                    $true { 
+                        Import-Module .\scripts\wt.psm1
+                        $newScheme = Get-WtScheme -Theme $schemeName
+                        $settingsJson.schemes += $newScheme
+                    }
+                    $false {
+                        Write-Output "$($schemeName) color scheme already installed."
+                    }
+                    Default {}
+                }
+            }
+        }
         switch ($null -ne $settingsJson.profiles) {
             $true { 
                 switch ($null -ne $settingsJson.profiles.defaults) {
                     $true { 
                         switch ($null -ne $settingsJson.profiles.defaults.colorScheme) {
                             $false { 
-                                $colorScheme = 'Solarized Dark'
-                                Write-Output "Setting Windows Terminal font size to $($colorScheme)"
-                                $settingsJson.profiles.defaults | Add-Member -MemberType NoteProperty -Name 'colorScheme' -Value $colorScheme }
+                                Write-Output "Setting Windows Terminal font size to $($schemeName)"
+                                $settingsJson.profiles.defaults | Add-Member -MemberType NoteProperty -Name 'colorScheme' -Value $schemeName }
                             $true { Write-Output "Windows Terminal default Color Scheme is already set." }
                             Default {}
                         }

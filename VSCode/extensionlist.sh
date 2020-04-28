@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -eou pipefail
-
+code --install-extension shan.code-settings-sync
 code --install-extension akamud.vscode-theme-onelight
 code --install-extension almenon.arepl
 code --install-extension amazonwebservices.aws-toolkit-vscode

@@ -2,3 +2,5 @@
 
 # Ignore JSON lock files
 *.lock.json
+
+.DS_Store

@@ -64,7 +64,7 @@ configureGitCompletion () {
 }
 
 pl9kInstall () {
-    PLPATH="/usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme"
+    PLPATH="/opt/homebrew/opt/powerlevel9k/powerlevel9k.zsh-theme"
     SRCSTRING="source $PLPATH"
     ZSHRC="~/.zshrc"
     if test -f "$PLPATH"; then

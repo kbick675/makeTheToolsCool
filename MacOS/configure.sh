@@ -65,6 +65,21 @@ configureGitCompletion () {
     fi
 }
 
+rosetta2Install () {
+    ARCH=$(/usr/bin/arch)
+    if [ "$ARCH" == "arm64" ]; then
+        ROSETTAPATH="/usr/libexec/rosetta"
+        if test -d "$ROSETTAPATH"; then
+            info "Rosetta 2 is intalled..."
+        else
+            info "Installing Rosetta 2..."
+            sudo softwareupdate --install-rosetta --agree-to-license
+        fi
+    else
+        info "Rosetta 2 does not need to be installed..."
+    fi
+}
+
 pl9kInstall () {
     PLPATH="/opt/homebrew/opt/powerlevel9k/powerlevel9k.zsh-theme"
     SRCSTRING="source $PLPATH"
@@ -99,6 +114,7 @@ info "--Setup started--"
 #Install Packages
 brewInstall
 brewUpdate
+rosetta2Install
 brewBundleInstall
 zshInstall
 zshZInstall

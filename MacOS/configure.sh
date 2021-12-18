@@ -7,6 +7,8 @@ brewInstall () {
     if test ! $(which brew); then
         if test "$(uname)" = "Darwin"; then
             ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+            echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+            eval "$(/opt/homebrew/bin/brew shellenv)"
             success 'brew installed'
         else
             info "Homebrew is for MacOS, not whatever mess you're running this on."

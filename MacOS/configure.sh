@@ -42,6 +42,15 @@ zshInstall () {
     fi
 }
 
+ohMyZshInstall () {
+    if [ -d "$HOME/.oh-my-zsh" ]; then
+        info "oh-My-Zsh already exists..."
+    else
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        success 'oh-my-zsh installed'
+    fi
+}
+
 zshZInstall () {
     if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-z" ]; then
         info "zsh-z already exists..."
@@ -117,6 +126,7 @@ brewUpdate
 rosetta2Install
 brewBundleInstall
 zshInstall
+ohMyZshInstall
 zshZInstall
 configureGitCompletion
 pl9kInstall

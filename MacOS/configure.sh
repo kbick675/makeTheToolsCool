@@ -89,20 +89,21 @@ rosetta2Install () {
     fi
 }
 
-pl9kInstall () {
-    PLPATH="/opt/homebrew/opt/powerlevel9k/powerlevel9k.zsh-theme"
+pl10kInstall () {
+    PLPATH="$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
     SRCSTRING="source $PLPATH"
     ZSHRC="~/.zshrc"
     if test -f "$PLPATH"; then
-        info "powerlevel9k package is installed..."
+        info "powerlevel10k package is installed..."
         if grep -q "source $PLPATH" ~/.zshrc; then
-            info "zsh is configured to use powerlevel9k..."
+            info "zsh is configured to use powerlevel10k..."
         else
-            echo "source $PLPATH" >> ~/.zshrc
+            echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+            echo "Restart terminal to setup powerlevel10k"
         fi
     else
-        brew install powerlevel9k
-        pl9kInstall
+        brew install romkatv/powerlevel10k/powerlevel10k
+        pl10kInstall
     fi
 }
 
@@ -129,7 +130,7 @@ zshInstall
 ohMyZshInstall
 zshZInstall
 configureGitCompletion
-pl9kInstall
+pl10kInstall
 
 #Install Fonts
 fontsInstall

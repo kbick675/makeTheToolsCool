@@ -99,7 +99,7 @@ pl10kInstall () {
             info "zsh is configured to use powerlevel10k..."
         else
             echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-            echo "Restart terminal to setup powerlevel10k"
+            info "Restart terminal to setup powerlevel10k"
         fi
     else
         brew install romkatv/powerlevel10k/powerlevel10k

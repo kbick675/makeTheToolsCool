@@ -4,9 +4,9 @@ set -eou pipefail
 source ../scripts/prompt
 
 brewInstall () {
-    if test ! $(which brew); then
+    if ! brew_loc="$(which brew)" || [[ -z $brew_loc ]]; then
         if test "$(uname)" = "Darwin"; then
-            ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
             eval "$(/opt/homebrew/bin/brew shellenv)"
             success 'brew installed'

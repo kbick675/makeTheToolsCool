@@ -109,13 +109,18 @@ pl10kInstall () {
 
 fontsInstall () {
     FILES=../Fonts/*.ttf
+    info "Aliasing Fontbook..."
+    alias fontbook="open -b com.apple.FontBook"
     info "Installing fonts..."
     for filename in ../Fonts/*.ttf; do
         if test -f ~/Library/Fonts/"$filename"; then
             info "$filename is already in the Fonts directory..."
         else
-            cp "$filename" ~/Library/Fonts
-            success "$filename successfully copied to the Fonts directory..."
+            {
+                fontbook "$filename" &&
+            } || {
+                fail "Failed to copy $filename to the Fonts directory..."
+            }
         fi
     done
 }

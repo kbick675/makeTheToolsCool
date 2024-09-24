@@ -107,23 +107,6 @@ pl10kInstall () {
     fi
 }
 
-fontsInstall () {
-    FILES=../Fonts/*.ttf
-    info "Aliasing Fontbook..."
-    alias fontbook="open -b com.apple.FontBook"
-    info "Installing fonts..."
-    for filename in ../Fonts/*.ttf; do
-        if test -f ~/Library/Fonts/"$filename"; then
-            info "$filename is already in the Fonts directory..."
-        else
-            {
-                fontbook "$filename" &&
-            } || {
-                fail "Failed to copy $filename to the Fonts directory..."
-            }
-        fi
-    done
-}
 
 info "--Setup started--"
 #Install Packages
@@ -136,8 +119,5 @@ ohMyZshInstall
 zshZInstall
 configureGitCompletion
 pl10kInstall
-
-#Install Fonts
-fontsInstall
 
 info "--Setup complete--"

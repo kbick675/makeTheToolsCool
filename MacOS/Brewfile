@@ -1,44 +1,267 @@
-tap "fluxcd/tap"
-tap "homebrew/bundle"
-brew "python@3.11"
-brew "ansible"
+tap "bufbuild/buf"
+tap "darksworm/tap"
+tap "hashicorp/tap"
+# GitOps Continuous Delivery for Kubernetes
+brew "argocd"
+# Password hashing library and CLI utility
+brew "argon2"
+# Database toolkit
 brew "atlas"
-brew "awscli"
+# Terminal bandwidth utilization tool
+brew "bandwhich"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Collection of portable C++ source libraries
+brew "boost"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
+# Audit Cargo.lock files for crates with security vulnerabilities
+brew "cargo-audit"
+# Cargo plugin for linting your dependencies
+brew "cargo-deny"
+# Detects usage of unsafe Rust in a Rust crate and its dependencies
+brew "cargo-geiger"
+# Find unused dependencies in Cargo.toml
+brew "cargo-udeps"
+# Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
+# Command-line tool to manage cert-manager
 brew "cmctl"
+# Create and run Linux containers using lightweight virtual machines
+brew "container"
+# Passphrases to remember
 brew "diceware"
+# Pack, ship and run any application as a lightweight container
 brew "docker"
+# More intuitive version of du in rust
+brew "dust"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
 brew "git"
+# Audit git repos for secrets
+brew "gitleaks"
+# Alternative to top/htop
+brew "glances"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# CLI for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more
+brew "googleworkspace-cli"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# GNU grep, egrep and fgrep
 brew "grep"
+# Kubernetes package manager
 brew "helm"
+# Improved top (interactive process viewer)
 brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Tool to measure maximum TCP and UDP bandwidth
 brew "iperf"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
+# Istio configuration command-line utility
 brew "istioctl"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
-brew "kubernetes-cli"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
+# Tool to move from `docker-compose` to Kubernetes
+brew "kompose"
+# Colorize your kubectl output
+brew "kubecolor"
+# Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Easily check your clusters for use of deprecated APIs
 brew "kubent"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Kubernetes controller and tool for one-way encrypted Secrets
 brew "kubeseal"
+# Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
+# Next-gen compiler infrastructure
+brew "llvm"
+# LLVM Project Linker
+brew "lld"
+# Next-gen compiler infrastructure
+brew "llvm@17"
+# Development kit for the Java programming language
+brew "openjdk"
+# Java-based project management
+brew "maven"
+# 'traceroute' and 'ping' in a single tool
 brew "mtr"
-brew "neofetch"
+# Open source relational database management system
+brew "mysql-client@8.4"
+# NCurses Disk Usage
+brew "ncdu"
+# Port scanning utility for large networks
 brew "nmap"
-brew "podman-compose"
+# Modern shell for the GitHub era
+brew "nushell"
+# Manage multiple Node.js versions
+brew "nvm"
+# Drop-in replacement for Terraform. Infrastructure as Code Tool
+brew "opentofu"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Modern replacement for ps written in Rust
+brew "procs"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Rust toolchain installer
+brew "rustup"
+# Easily detect and prevent bugs and anti-patterns in your codebase
+brew "semgrep"
+# Fully featured SFTP server with optional HTTP/S, FTP/S and WebDAV support
 brew "sftpgo"
-brew "speedtest-cli"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Easy and Repeatable Kubernetes Development
+brew "skaffold"
+# Terminal based presentation tool
+brew "slides"
+# Scans and monitors projects for security vulnerabilities
+brew "snyk-cli"
+# CLI and Go API to Test Internet Speed using speedtest.net
+brew "speedtest-go"
+# Generate type safe Go from SQL
+brew "sqlc"
+# Test SSL/TLS enabled services to discover supported cipher suites
 brew "sslscan"
+# User interface to the TELNET protocol
 brew "telnet"
-brew "terraform"
-brew "fluxcd/tap/flux"
+# Tool to generate documentation from Terraform modules
+brew "terraform-docs"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Weather app for the terminal
+brew "wego"
+# JavaScript package manager
+brew "yarn"
+# Tool for managing your YubiKey configuration
+brew "ykman"
+# The best way of working with Protocol Buffers.
+brew "bufbuild/buf/buf", trusted: true
+# Terraform
+brew "hashicorp/tap/terraform", trusted: true
+# A GitOps CLI tool for managing ArgoCD applications
+cask "darksworm/tap/argonaut", trusted: true
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Database version management tool
+cask "dbngin"
+cask "font-noto-sans-jp"
+cask "font-sauce-code-pro-nerd-font"
+cask "font-source-code-pro"
+cask "font-source-code-pro-for-powerline"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# GIF recording and sharing
+cask "gifox"
+# Web browser
 cask "google-chrome"
-cask "mysqlworkbench"
+# Homebrew's official GUI
+cask "homebrew-app"
+# Testing client for REST, GraphQL, and HTTP APIs
+cask "httpie-desktop"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask "pearcleaner"
+# Administration and development platform for PostgreSQL
 cask "pgadmin4"
+# Browse, manage, inspect containers and images
 cask "podman-desktop"
-cask "powershell"
+# Open source virtual/remote desktop application
+cask "rustdesk"
+# Menu bar app that enables system-wide navigation using side mouse buttons
 cask "sanesidebuttons"
-cask "yubico-yubikey-manager"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Unpacks archive files
+cask "the-unarchiver"
+# Virtual machines UI using QEMU
+cask "utm"
+# Terminal emulator
+cask "wave"
+# Connect to Windows
+cask "windows-app"
+# Network protocol analyzer
+cask "wireshark-app"
+vscode "akamud.vscode-theme-onelight"
+vscode "almenon.arepl"
+vscode "azemoh.one-monokai"
+vscode "bbenoist.nix"
+vscode "davidanson.vscode-markdownlint"
+vscode "docker.docker"
+vscode "dotjoshjohnson.xml"
+vscode "eamodio.gitlens"
+vscode "evan-buss.font-switcher"
+vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
+vscode "golang.go"
+vscode "grafana.grafana-alloy"
+vscode "hashicorp.hcl"
+vscode "hashicorp.terraform"
+vscode "humao.rest-client"
+vscode "ivory-lab.jenkinsfile-support"
+vscode "jakebathman.mysql-syntax"
+vscode "jinliming2.vscode-go-template"
+vscode "me-dutour-mathieu.vscode-github-actions"
+vscode "mechatroner.rainbow-csv"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.autopep8"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode.live-server"
+vscode "ms-vscode.powershell"
+vscode "njpwerner.autodocstring"
+vscode "pkief.material-icon-theme"
+vscode "redhat.vscode-yaml"
+vscode "rust-lang.rust-analyzer"
+vscode "serkonda7.vscode-vba"
+vscode "shakram02.bash-beautify"
+vscode "shd101wyy.markdown-preview-enhanced"
+vscode "tamasfe.even-better-toml"
+vscode "teabyii.ayu"
+vscode "uloco.theme-bluloco-light"
+vscode "vscode-icons-team.vscode-icons"
+vscode "vue.volar"
+krew "df-pv"
+krew "krew"
+krew "outdated"
+krew "resource-capacity"
+npm "corepack"

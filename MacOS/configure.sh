@@ -137,7 +137,4 @@ zshZInstall
 configureGitCompletion
 pl10kInstall
 
-#Install Fonts
-fontsInstall
-
 info "--Setup complete--"
